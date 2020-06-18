@@ -1,0 +1,90 @@
+<div class="modal" *ngIf="basic">
+    <div class="modal-dialog" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button aria-label="Close" class="close" type="button" (click)="basic = false"
+                    (click)="resetPriceInPendingOrder()">
+                    <clr-icon aria-hidden="true" shape="close"></clr-icon>
+                </button>
+                <h3 class="modal-title">{{getSelectedSymbol()}}</h3>
+            </div>
+
+            <div class="modal-body">
+                <clr-tabs>
+                    <clr-tab>
+                        <clr-tab-content>
+                            <button clrTabLink (click)="isImmediateExecution = true">Instant execution</button>
+                            <app-immediate-execution></app-immediate-execution>
+                        </clr-tab-content>
+                    </clr-tab>
+                    <clr-tab>
+                        <clr-tab-content>
+                            <button clrTabLink (click)="isImmediateExecution = false">Pending order</button>
+                            <app-pending-execution></app-pending-execution>
+                        </clr-tab-content>
+                    </clr-tab>
+                </clr-tabs>
+            </div>
+
+            <div class="modal-footer" [hidden]="!isImmediateExecution">
+                <button type="button" class="btn btn-danger" (click)="basic = false" (click)="typePosition = 'SHORT'"
+                    (click)="immediatelyExecution()">{{getSellMarket()}} Sell</button>
+                <button type="button" class="btn btn-success" (click)="basic = false" (click)="typePosition = 'LONG'"
+                    (click)="immediatelyExecution()">{{getBuyMarket()}} Buy</button>
+            </div>
+            <div class="modal-footer" [hidden]="isImmediateExecution">
+                <button type="button" class="btn btn-danger" (click)="basic = false"
+                    (click)="resetPriceInPendingOrder()" (click)="typePosition = 'SHORT'"
+                    (click)="pendiningExecution()">Sell limit</button>
+                <button type="button" class="btn btn-success" (click)="basic = false"
+                    (click)="resetPriceInPendingOrder()" (click)="typePosition = 'LONG'"
+                    (click)="pendiningExecution()">Buy limit</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div *ngIf="basic" class="modal-backdrop" aria-hidden="true"></div>
+
+<!-- STARE ROZWIĄZANIE
+<clr-modal [(clrModalOpen)]="basic">
+    <div class="modal-header">
+        <button aria-label="Close" class="close" type="button" (click)="resetPriceInPendingOrder()">
+            <clr-icon aria-hidden="true" shape="close"></clr-icon>
+        </button>
+        <h3 class="modal-title"> {{getSelectedSymbol()}} </h3>
+    </div>
+    <h3 class="modal-title"> {{getSelectedSymbol()}} </h3>
+    <button>dsd</button>
+    <div class="modal-body">
+        <clr-tabs>
+            <clr-tab>
+                <clr-tab-content>
+                    <button clrTabLink (click)="isImmediateExecution = true">Zlecenie
+                        natychmiastowe</button>
+                    <app-immediate-execution></app-immediate-execution>
+                </clr-tab-content>
+            </clr-tab>
+            <clr-tab>
+                <clr-tab-content>
+                    <button clrTabLink (click)="isImmediateExecution = false">Zlecenie oczekujące</button>
+                    <app-pending-execution></app-pending-execution>
+                </clr-tab-content>
+            </clr-tab>
+        </clr-tabs>
+    </div>
+    <div class="modal-footer" [hidden]="!isImmediateExecution">
+        <button type="button" class="btn btn-danger" (click)="basic = false">{{getSellMarket()}}
+            Sell</button>
+        <button type="button" class="btn btn-success" (click)="basic = false">{{getBuyMarket()}}
+            Buy</button>
+    </div>
+    <div class="modal-footer" [hidden]="isImmediateExecution">
+        <button type="button" class="btn btn-danger" (click)="basic = false" (click)="resetPriceInPendingOrder()">Sell
+            limit</button>
+        <button type="button" class="btn btn-success" (click)="basic = false" (click)="resetPriceInPendingOrder()">Buy
+            limit</button>
+    </div>
+
+</clr-modal> -->

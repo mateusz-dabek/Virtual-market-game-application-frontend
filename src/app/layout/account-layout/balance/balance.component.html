@@ -1,0 +1,17 @@
+<div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Actual balance</span>
+        <span class="input-group-text">$</span>
+    </div>
+    <input type="text" class="form-control" readonly [value]="getBalance() | number : '1.2-2'">
+</div>
+
+<div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">New balance </span>
+        <span class="input-group-text">$</span>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="balance" appFloatingPointNumber>
+</div>
+
+<button class="btn btn-success-outline" (click)="changeBalance()">Save new balane</button>

@@ -1,0 +1,74 @@
+<clr-tabs>
+    <clr-tab>
+        <button clrTabLink>FX</button>
+        <!-- <ng-template [(clrIfActive)]="dashboardActive"> -->
+        <clr-tab-content>
+            <div class="limit-height">
+                {{refresh()}}
+                <clr-datagrid [clrDgLoading]="loading" [hidden]="forex?.lenght == 0">
+                    <clr-dg-column>Symbol</clr-dg-column>
+                    <clr-dg-column>Bid</clr-dg-column>
+                    <clr-dg-column>Ask</clr-dg-column>
+                    <clr-dg-row *ngFor="let element of forex | slice:0:12">
+                        <!-- Cells declarations -->
+                        <clr-dg-cell>{{element.symbol}}</clr-dg-cell>
+                        <clr-dg-cell>{{element.bid}}</clr-dg-cell>
+                        <clr-dg-cell>{{element.ask}}</clr-dg-cell>
+                        <clr-dg-row-detail *clrIfExpanded>
+                            <button class="btn " (click)="showWindow($event, element.symbol)">Create position</button>
+                            <button class="btn " (click)="reloadChart($event, element.symbol)">Open chart</button>
+                        </clr-dg-row-detail>
+                    </clr-dg-row>
+                </clr-datagrid>
+            </div>
+            <!-- przy dodaniu CRT/SUR moze być konieczne przeniesc modalwindow bo tam się nie pojawi-->
+        </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+        <button clrTabLink>CRT</button>
+        <!-- <ng-template [(clrIfActive)]="dashboardActive"> -->
+        <clr-tab-content>
+            <div class="limit-height">
+                <clr-datagrid [hidden]="forex?.lenght == 0">
+                    <clr-dg-column>Symbol</clr-dg-column>
+                    <clr-dg-column>Bid</clr-dg-column>
+                    <clr-dg-column>Ask</clr-dg-column>
+                    <clr-dg-row *ngFor="let element of forex | slice:12:17">
+                        <!-- Cells declarations -->
+                        <clr-dg-cell>{{element.symbol}}</clr-dg-cell>
+                        <clr-dg-cell>{{element.bid}}</clr-dg-cell>
+                        <clr-dg-cell>{{element.ask}}</clr-dg-cell>
+                        <clr-dg-row-detail *clrIfExpanded>
+                            <button class="btn" (click)="showWindow($event, element.symbol)">Order window </button>
+                            <button class="btn" (click)="reloadChart($event, element.symbol)">Open chart</button>
+                        </clr-dg-row-detail>
+                    </clr-dg-row>
+                </clr-datagrid>
+            </div>
+        </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+        <button clrTabLink>CMD</button>
+        <!-- <ng-template [(clrIfActive)]="dashboardActive"> -->
+        <clr-tab-content>
+            <div class="limit-height">
+                <clr-datagrid [hidden]="forex?.lenght == 0">
+                    <clr-dg-column>Symbol</clr-dg-column>
+                    <clr-dg-column>Bid</clr-dg-column>
+                    <clr-dg-column>Ask</clr-dg-column>
+                    <clr-dg-row *ngFor="let element of forex | slice:17:20">
+                        <!-- Cells declarations -->
+                        <clr-dg-cell>{{element.symbol}}</clr-dg-cell>
+                        <clr-dg-cell>{{element.bid}}</clr-dg-cell>
+                        <clr-dg-cell>{{element.ask}}</clr-dg-cell>
+                        <clr-dg-row-detail *clrIfExpanded>
+                            <button class="btn " (click)="showWindow($event, element.symbol)">Order window</button>
+                            <button class="btn " (click)="reloadChart($event, element.symbol)">Open chart</button>
+                        </clr-dg-row-detail>
+                    </clr-dg-row>
+                </clr-datagrid>
+            </div>
+        </clr-tab-content>
+    </clr-tab>
+</clr-tabs>
+<app-modal-window></app-modal-window>

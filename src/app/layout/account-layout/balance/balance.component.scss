@@ -1,0 +1,50 @@
+@import "../../../../../node_modules/bootstrap/bootstrap.min.css";
+
+.input-group-sm>.custom-select,
+.input-group-sm>.form-control,
+.input-group-sm>.input-group-append>.btn,
+.input-group-sm>.input-group-append>.input-group-text,
+.input-group-sm>.input-group-prepend>.btn,
+.input-group-sm>.input-group-prepend>.input-group-text {
+    height: calc(1.3125rem + 2px);
+    padding: .20rem .5rem;
+    font-size: .60rem; // 875
+    line-height: 1.5;
+    border-radius: .0rem;
+  }
+
+  .mb-3 {
+    margin-top: 1rem;
+    margin-bottom: 0rem!important;
+  }
+
+  .space {
+    margin-right: 1.2rem;
+  }
+
+  // sekcja krytyczna?
+  textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: none;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+
+.btn-success-outline {
+    margin-top: 23px;
+}

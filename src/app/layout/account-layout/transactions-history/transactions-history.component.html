@@ -1,0 +1,23 @@
+<clr-datagrid>
+    <clr-dg-column [clrDgField]="'symbol'">Symbol</clr-dg-column>
+    <clr-dg-column [clrDgField]="'typePosition'">Type</clr-dg-column>
+    <clr-dg-column [clrDgField]="'openPrice'">Open price</clr-dg-column>
+    <clr-dg-column [clrDgField]="'exitPrice'">Close price</clr-dg-column>
+    <clr-dg-column [clrDgField]="'leverage'">Leverage</clr-dg-column>
+    <clr-dg-column [clrDgField]="'value'">Total value</clr-dg-column>
+    <clr-dg-column [clrDgField]="'profit'">Profit</clr-dg-column>
+    <clr-dg-column [clrDgField]="'openTime'">Open date</clr-dg-column>
+ 
+    <clr-dg-row *clrDgItems="let element of transactionHistory">
+        <clr-dg-cell>{{element.symbol}}</clr-dg-cell>
+        <clr-dg-cell>{{element.typePosition}}</clr-dg-cell>
+        <clr-dg-cell>{{element.openPrice}}</clr-dg-cell>
+        <clr-dg-cell>{{element.exitPrice}}</clr-dg-cell>
+        <clr-dg-cell>{{element.leverage}}</clr-dg-cell>
+        <clr-dg-cell>{{element.value | number : '1.2-2'}}</clr-dg-cell>
+        <clr-dg-cell>{{element.profit | number : '1.2-2' }}</clr-dg-cell>
+        <clr-dg-cell>{{element.openTime}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <!-- <clr-dg-footer> miao footer</clr-dg-footer> -->
+</clr-datagrid>

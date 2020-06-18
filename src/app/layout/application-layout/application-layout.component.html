@@ -1,0 +1,39 @@
+<div class="main-container">
+    <!-- <div class="alert alert-app-level">
+        Jakieś ceny?
+    </div> -->
+    <header class="header header-6">
+        <!-- <button class="btn btn-icon">
+            <clr-icon shape="view-list" size="36" class="is-solid"></clr-icon>
+        </button>
+        <button class="btn btn-icon" aria-label="main menu">
+            <clr-icon shape="bars"></clr-icon>
+        </button> -->
+        <button class="btn btn-icon" (click)="tradingPage()">
+            TRADING
+        </button>
+        <button class="btn btn-icon" (click)="accountPage()">
+            ACCOUNT
+        </button>
+        <button class="btn btn-icon">
+            <clr-icon shape="logout" size="36" (click)="logout()"></clr-icon>
+        </button>
+
+    </header>
+    
+    <!-- <nav class="subnav">
+        Niepotrzebny
+    </nav> -->
+    <div class="content-container">
+        <div class="content-area">
+            <app-output-graph></app-output-graph>
+        </div>
+        <!-- <ng-template #alertBox></ng-template> -->
+        <nav class="sidenav">
+            <app-sidenav></app-sidenav>
+        </nav>
+    </div>
+    <div class="content-container">
+        <app-position class="widthAppPosition"></app-position>
+    </div>
+</div>

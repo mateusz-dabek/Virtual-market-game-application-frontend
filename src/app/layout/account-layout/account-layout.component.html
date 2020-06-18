@@ -1,0 +1,48 @@
+<div class="main-container">
+    <header class="header header-6">
+        <button class="btn btn-icon" (click)="trading()">
+            TRADING
+        </button>
+        <button class="btn btn-icon" (click)="account()">
+            ACCOUNT
+        </button>
+        <button class="btn btn-icon">
+            <clr-icon shape="logout" size="36" (click)="logout()"></clr-icon>
+        </button>
+    </header>
+    <div class="content-container">
+        <main class="content-area">
+            <router-outlet></router-outlet>
+        </main>
+        <nav class="sidenav">
+            <section class="sidenav-content">
+
+                <section class="nav-group">
+                    <input id="tabexample2" type="checkbox">
+                    <label for="tabexample2">Transaction history</label>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" routerLink="history">Transaction history</a></li>
+                    </ul>
+                </section>
+
+                <section class="nav-group">
+                    <input id="tabexample3" type="checkbox">
+                    <label for="tabexample3">Statistics</label>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" routerLink="statistic">Statistics</a></li>
+                    </ul>
+                </section>
+                <!-- collapsible -->
+                <section class="nav-group">
+                    <input id="tabexample1" type="checkbox">
+                    <label for="tabexample1">Account</label>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" routerLink="changePassword">Password change</a></li>
+                        <li><a class="nav-link" routerLink="balance">Adding balance</a></li>
+                    </ul>
+                </section>
+
+            </section>
+        </nav>
+    </div>
+</div>

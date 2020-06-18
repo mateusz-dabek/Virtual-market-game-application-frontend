@@ -1,0 +1,36 @@
+.btn-danger .btn, .btn-warning .btn, .btn.btn-danger, .btn.btn-warning {
+    border-color: #e02200;
+    background-color: #e02200; // #e53935
+    color: #fff;
+    min-width: 5.5rem;
+    max-width: 5.5rem;
+    position: absolute;
+    left: 10px;
+}
+
+.btn-success .btn, .btn.btn-success {
+    border-color: #2e8500;
+    background-color: #2e8500;
+    color: #fff;
+    min-width: 5.5rem;
+    max-width: 5.5rem;
+    right: 10px;
+    padding: 0 .125rem;
+}
+
+.modal-title {
+    text-align: center;
+
+    color: #000;
+    font-size: .916667rem;
+    font-family: Metropolis,"Avenir Next","Helvetica Neue",Arial,sans-serif;
+    font-weight: bold;
+    line-height: 1.2rem;
+    letter-spacing: normal;
+    margin: 0;
+    padding: 0 .125rem;
+}
+
+.modal-footer .btn {
+    margin: 0 0.125rem 0 .7rem;
+}
